@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Work Hours Tracker</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <style>
+            #breakTimerBox {
+                display: none !important;
+            }
+            #breakTimerBox.show {
+                display: block !important;
+            }
+        </style>
+    </head>
+    <body class="bg-light">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6 shadow p-4 bg-white rounded">
+                    <h2 class="mb-4 text-center">Work Hours Tracker</h2>
+                    <div
+                        id="status"
+                        class="alert alert-info"
+                    >
+                        Status: Loading...
+                    </div>
+                    <div
+                        class="d-flex justify-content-center mb-3"
+                        id="buttonGroup"
+                    >
+                        <button
+                            id="clockInBtn"
+                            class="btn btn-success me-2"
+                            onclick="clockIn()"
+                            style="display: inline-block"
+                        >
+                            Clock In
+                        </button>
+                        <button
+                            id="clockOutBtn"
+                            class="btn btn-danger me-2"
+                            onclick="clockOut()"
+                            style="display: inline-block"
+                        >
+                            Clock Out
+                        </button>
+                        <button
+                            id="breakBtn"
+                            class="btn btn-warning"
+                            onclick="toggleBreak()"
+                            style="display: inline-block"
+                        >
+                            Start Break
+                        </button>
+                    </div>
+                    <div
+                        id="breakTimerBox"
+                        class="text-center"
+                        style="margin-bottom: 1.5rem"
+                    >
+                        <span
+                            class="badge bg-primary"
+                            style="font-size: 1.25rem"
+                            >Break Timer: <span id="breakTimer">00:00:00</span></span
+                        >
+                    </div>
+                    <div
+                        id="remainingBox"
+                        class="text-center"
+                        style="margin-bottom: 1.5rem"
+                    >
+                        <span
+                            class="badge bg-secondary"
+                            style="font-size: 1.25rem"
+                            >Remaining Time: <span id="remainingTimer">--:--:--</span></span
+                        >
+                    </div>
+                    <h4 class="mt-4">Recent Logs</h4>
+                    <ul
+                        class="list-group"
+                        id="logs"
+                    ></ul>
+                    <div class="mt-4">
+                        <small class="text-muted">
+                            "End Break" changes back to "Start Break" after a successful Break End action is logged.
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/static/js/clock_app.js"></script>
+    </body>
+</html>
