@@ -1,0 +1,6 @@
+# dependencies for this repository
+# (example: requirements.txt for Python project)
+# Uncomment or add as needed:
+flask
+flask-cors
+sqlite3
